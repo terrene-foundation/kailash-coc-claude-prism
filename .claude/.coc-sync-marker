@@ -1,0 +1,67 @@
+# COC Sync Marker — kailash-coc-claude-prism
+# Emitted by coc-sync (Gate 2) from loom/.claude on each /sync run.
+# Format: YAML (per coc-sync.md Step 9 — JSON BLOCKED).
+# Prior marker on this template was JSON; converted to YAML this sync.
+timestamp: 2026-04-26T00:00:00Z
+source: loom/.claude
+source_version: 2.9.1
+template_version: 2.9.1
+variant: prism
+clis: [claude]
+baseline_files: [CLAUDE.md]
+stats:
+  updated: 47
+  created: 21
+  unchanged: 0
+  composed: 0           # prism variants are full-file replacements (not slot-keyed); compose.mjs N/A
+  preserved: 1          # learning/ (target-specific data); CLAUDE.md absent at root, nothing to preserve
+  obsoleted_purged:
+    - scripts/hooks/                # already absent pre-sync; .coc-obsoleted marker emitted
+    - .claude/scripts/              # already absent pre-sync; .coc-obsoleted marker emitted
+    - scripts/resolve-template.js   # already absent pre-sync; .coc-obsoleted marker emitted
+  artifact_inventory:
+    rules: 47
+    commands: 25
+    hooks: 13
+    hook_libs: 7
+    scripts_files: 40
+    skill_md_files: 467
+    agents_top_level: 6
+    agents_in_subdirs: 22
+  variant_overlays_applied:
+    - rules/agents.md
+    - rules/independence.md
+    - rules/security.md
+    - rules/terrene-naming.md
+    - rules/testing.md
+    - rules/zero-tolerance.md
+    - rules/git.md            # was drifted (global content); fixed this sync
+    - rules/observability.md  # was drifted (global content); fixed this sync
+  baselines_emitted:        # CC-only template — no AGENTS.md / GEMINI.md emission
+    cc: 0                   # CLAUDE.md preserved (absent at template root, not emitted)
+    codex: 0                # not in clis: [claude]
+    gemini: 0               # not in clis: [claude]
+  cli_artifacts:            # CC-only template — no .codex/ or .gemini/ trees emitted
+    codex: null
+    gemini: null
+  mcp_guard:
+    policies_populated: false   # N/A — CC-only template
+    predicates_extracted: 0
+verification:
+  settings_json_scripts_hooks_refs: 0          # MUST be 0 — Step 8.1 PASS
+  settings_json_dot_claude_hooks_refs: 12      # canonical paths
+  hooks_total: 12                              # all settings.json hooks resolve to .claude/hooks/*.js
+  hooks_missing: 0                             # Step 8.4 PASS
+  hook_lib_requires_resolved: 5                # env-utils, learning-utils, release-drift, version-utils, workspace-utils
+  hook_lib_requires_missing: 0                 # Step 8.5 PASS
+  legacy_scripts_hooks_dir_present: false      # Step 8.2 PASS
+  coc_obsoleted_marker_present: true           # Step 8.3 PASS
+  coc_obsoleted_entries: 3
+  build_internal_path_leaks: 0                 # 79 textual mentions are Origin/contextual references, not actual path usage
+notes:
+  - Pre-existing orphan claude-code-architect.md preserved (legacy rename of cc-architect; not in obsoleted list).
+  - .claude/learning/observations.jsonl preserved (template-specific data; not in manifest).
+  - Loom-only management agents excluded per manifest: coc-sync, sync-reviewer, repo-ops, settings-manager.
+  - Multi-CLI orchestration files removed (cli-orchestrator.md agent + cli-audit.md command) — prism is CC-only (clis: [claude]).
+  - Step 6.5 + 6.6 baseline emission + CLI config trees SKIPPED — clis: [claude] only.
+  - Prior .coc-sync-marker was JSON; this sync converts to YAML per coc-sync.md Step 9 directive.

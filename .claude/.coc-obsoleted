@@ -1,0 +1,6 @@
+# COC obsoleted paths — emitted by coc-sync from loom/.claude/sync-manifest.yaml
+# Downstream /sync MUST recursively delete each entry from the consumer repo
+# before installing the new layout. See loom v2.9.1 release notes.
+scripts/hooks/
+.claude/scripts/
+scripts/resolve-template.js
