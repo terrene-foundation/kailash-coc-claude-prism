@@ -1,12 +1,38 @@
 {
-  "version": "1.0.1",
+  "version": "2.9.1",
   "type": "coc-use-template",
   "variant": "prism",
-  "updated": "2026-04-13",
+  "updated": "2026-04-26",
   "description": "COC USE template for Kailash Prism (composable FE engine: flutter/web/tauri/stitch + prism compiler)",
   "upstream": {
     "source": "loom",
-    "build_version": "2.8.2",
-    "synced_at": "2026-04-12T00:00:00Z"
-  }
+    "build_version": "2.9.1",
+    "synced_at": "2026-04-26T00:00:00Z"
+  },
+  "changelog": [
+    {
+      "version": "2.9.1",
+      "date": "2026-04-26",
+      "summary": "STRUCTURAL: hooks consolidated under .claude/hooks/ (Anthropic-documented location); legacy scripts/hooks/ + .claude/scripts/ + scripts/resolve-template.js purged via new declarative .coc-obsoleted mechanism. settings.json normalized to canonical .claude/hooks/ paths. Prism variant overlays re-applied (8 rules: agents, independence, security, terrene-naming, testing, zero-tolerance, git, observability). No SDK pin deltas; pure COC infra release.",
+      "changes": [
+        "STRUCTURAL: hooks now installed at .claude/hooks/ (was scripts/hooks/) with all 7 lib/ siblings.",
+        "PURGED: scripts/hooks/, .claude/scripts/, scripts/resolve-template.js (per loom v2.9.1 obsoleted manifest).",
+        "MARKER: .claude/.coc-obsoleted emitted with the 3 obsoleted paths so downstream /sync can purge them in consumer repos.",
+        "SETTINGS: settings.json hook command paths rewritten from $CLAUDE_PROJECT_DIR/scripts/hooks/ to $CLAUDE_PROJECT_DIR/.claude/hooks/.",
+        "VARIANTS: prism overlay re-applied for 8 rules — git.md and observability.md were drifted (global content), now correctly carry the prism variant.",
+        "AGENTS/COMMANDS/RULES/SKILLS/GUIDES: full /sync from loom 2.9.1."
+      ]
+    },
+    {
+      "version": "1.0.2",
+      "date": "2026-04-14",
+      "summary": "Framework-first enforcement hook + Nexus activation improvements.",
+      "changes": [
+        "HOOK: enforce-framework-first.js — blocks raw imports (FastAPI, SQLAlchemy, OpenAI, sklearn, transformers) in production code, redirects to Kailash frameworks.",
+        "AGENT: nexus-specialist description rewritten for semantic activation — user-facing terms (API endpoint, web service, REST API) instead of insider jargon.",
+        "SKILL: 03-nexus/nexus-for-fastapi-users.md — translation guide for route-first developers.",
+        "RULE: CLAUDE.md framework-first directive updated — no specific framework names."
+      ]
+    }
+  ]
 }
